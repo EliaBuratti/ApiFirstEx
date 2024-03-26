@@ -26,7 +26,19 @@ namespace ApiFirstEx.Controllers
             var utente = new Utente { Id= 1, Name = "Marco Andreucci", Email = "Marco.Andreucci@example.com"};
             var utentiDto = _mapper.Map<UtenteDto>(utente);
 
+
             return Ok(utentiDto);
+/*
+ * it's possible to add a field in the response 👇🏼
+ * 
+            var result = new
+            {
+                Utente = utentiDto,
+                CampoAggiuntivo = "Valore del campo aggiuntivo"
+            };
+
+            return Ok(result);
+*/
         }
 
     }
